@@ -10,9 +10,11 @@ class WelcomeBloc extends Bloc<WelcomeEvent,WelcomeState>{
     });
 
     on<OnClickEvent>((event,emit){
-      if(state.page < 5){
+      if(state.page < 4){
          event.pageController.animateToPage(state.page+1, duration: const Duration(microseconds: 300), curve: Curves.decelerate);
         emit(WelcomeState(state.page+1));
+      } else {
+        Navigator.of(event.context).pushNamedAndRemoveUntil("SignIn", (route) => false);
       }
     });
   }

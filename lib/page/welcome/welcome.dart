@@ -46,7 +46,7 @@ class WelcomeState_ extends State<Welcome> {
                   right: 30.w,
                   child: GestureDetector(
                     onTap: (){
-                      BlocProvider.of<WelcomeBloc>(context).add(OnClickEvent(state.pageController));
+                      BlocProvider.of<WelcomeBloc>(context).add(OnClickEvent(state.pageController,context));
                     },
                     child: Container(
                       height: 43.h,
@@ -64,7 +64,7 @@ class WelcomeState_ extends State<Welcome> {
                       ),
                       child: Center(
                         child: Text(
-                          'Next',
+                          'Tiếp tục',
                           style: TextStyle(
                             color: const Color.fromRGBO(238, 78, 46, 1),
                             fontFamily: "Roboto-Medium",
@@ -86,8 +86,8 @@ class WelcomeState_ extends State<Welcome> {
                     position:state.page,
                     decorator: DotsDecorator(
                       activeColor: Colors.white,
-                      size: const Size.square(9.0),
-                      activeSize: const Size(13.0, 9.0),
+                      size: const Size.square(8.0),
+                      activeSize: const Size(12.0, 8.0),
                       activeShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(3.0)),
                     ),
                   ),

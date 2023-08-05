@@ -10,8 +10,9 @@ class OnPageChangeEvent extends WelcomeEvent {
 }
 
 class OnClickEvent extends WelcomeEvent{
+  BuildContext context;
   PageController pageController;
-  OnClickEvent(this.pageController);
+  OnClickEvent(this.pageController, this.context);
 }
 
 
